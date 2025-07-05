@@ -36,7 +36,7 @@ The RAG chatbot operates on a simple yet powerful principle:
 
 ```
 
-rag-chatbot/  
+
 ├── config.yaml # Centralized configuration for the entire application  
 ├── prep-data.py # Script to prepare and ingest data into the vector database  
 ├── app.py # Streamlit web application for the RAG chatbot UI  
