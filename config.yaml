@@ -15,7 +15,8 @@ data_ingestion:
     - type: "pdf"
       path: "./data/pdfs/" # Directory or specific file
     - type: "csv"
-      path: "./data/csvs/my_data.csv" # Specific file path
+      # path: "./data/csvs/my_data.csv" # Specific file path
+      path: "./data/csvs/" # Directory or specific file
     # - type: "website" # Uncomment and configure if you have web URLs
     #   urls:
     #     - "https://ollama.com/"
