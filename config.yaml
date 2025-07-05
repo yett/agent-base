@@ -1,0 +1,34 @@
+# General Application Settings
+app_name: "LLM Powered RAG Chatbot Agent"
+
+# Ollama Settings
+ollama:
+  host: "http://localhost:11434" # Or your Ollama server address
+  llm_model: "llama3.2:latest" # Default LLM model for generation (e.g., llama3, mistral, gemma)
+  embedding_model: "mxbai-embed-large:latest" # Model for generating embeddings (e.g., nomic-embed-text, mxbai-embed-large)
+
+# Data Ingestion Settings (for prep-data.py)
+data_ingestion:
+  document_sources:
+    # Example: List of paths to your data. Add/modify as needed for your specific files.
+    # Relative paths are common. Ensure 'data/' directory exists and contains your files.
+    - type: "pdf"
+      path: "./data/pdfs/" # Directory or specific file
+    - type: "csv"
+      path: "./data/csvs/my_data.csv" # Specific file path
+    # - type: "website" # Uncomment and configure if you have web URLs
+    #   urls:
+    #     - "https://ollama.com/"
+    #     - "https://www.google.com/"
+  chunking:
+    chunk_size: 1000 # Max size of each text chunk
+    chunk_overlap: 200 # Overlap between chunks to maintain context
+  vector_store:
+    type: "chromadb"
+    persist_directory: "./chroma_db" # Location where ChromaDB will store data
+    collection_name: "rag_chatbot_collection" # Name of the collection in ChromaDB
+
+# RAG Specific Settings (for app.py)
+rag:
+  retrieval_k: 5 # Number of top relevant documents to retrieve
+  chain_type: "stuff" # Or "map_reduce", "refine", "map_rerank" - common LangChain chain types
