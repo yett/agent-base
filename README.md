@@ -70,7 +70,7 @@ Follow these steps to get the RAG chatbot running on your local machine.
 ### **1\. Clone the Repository**
 
 ```
-git clone &lt;repository_url&gt; # Replace &lt;repository_url&gt; with your actual repo URL  
+git clone git@github.com:yett/agent-base.git
 cd rag-chatbot  
 ```
 
